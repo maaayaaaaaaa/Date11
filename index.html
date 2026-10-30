@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf7f6">
+  <meta name="description" content="Хоёулаа нэг оройг хамтдаа өнгөрүүлье. ♡">
+  <title>Болзох уу? 🥰</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="invite" aria-label="Болзооны урилга">
+      <div class="top-note">just for you ♡</div>
+      <button class="heart" type="button" id="heartButton" aria-label="Нууц үг унших" title="Зүрхэн дээр дараарай">♥</button>
+      <p class="secret" id="secret" aria-live="polite">Чамайг санаад байна.</p>
+      <h1>Болзох уу?🥰</h1>
+      <p class="intro">Нэг оройг хоёулаа хамтдаа өнгөрүүлье. 🤍</p>
+
+      <div class="divider" aria-hidden="true">✳</div>
+      <form id="dateForm" novalidate>
+        <section class="field-section" aria-labelledby="calendarTitle">
+          <div class="section-head">
+            <div>
+              <h2 id="calendarTitle">Хэзээ завтай вэ?</h2>
+              <p>Боломжтой 1 өдрөө сонгоорой</p>
+            </div>
+          </div>
+          <div class="calendar">
+            <div class="calendar-bar">
+              <button type="button" class="nav" id="prevMonth" aria-label="Өмнөх сар">‹</button>
+              <strong id="monthLabel"></strong>
+              <button type="button" class="nav" id="nextMonth" aria-label="Дараагийн сар">›</button>
+            </div>
+            <div class="weekday-names" aria-hidden="true"><span>Да</span><span>Мя</span><span>Лх</span><span>Пү</span><span>Ба</span><span>Бя</span><span>Ня</span></div>
+            <div class="day-grid" id="calendarDays" aria-label="Өдөр сонгох"></div>
+          </div>
+          <label class="checkline"><input type="checkbox" id="chooseLater"><span>Одоохондоо хэлж мэдэхгүй байна</span></label>
+        </section>
+
+        <section class="field-section" aria-labelledby="activityTitle">
+          <h2 id="activityTitle">Юу хийх вэ?</h2>
+          <div class="chips activity" id="activityChoices" role="group" aria-label="Болзооны төрөл">
+            <button type="button" class="chip selected" data-activity="movie" aria-pressed="true">🎬 Кино үзэх</button>
+            <button type="button" class="chip" data-activity="food" aria-pressed="false">🍜 Хамт амттай юм идэх</button>
+            <button type="button" class="chip" data-activity="talk" aria-pressed="false">☕ Зүгээр л ярилцах</button>
+            <button type="button" class="chip" data-activity="all" aria-pressed="false">🥰 Бүгдэнг нь хийе</button>
+          </div>
+        </section>
+
+        <section class="movies" id="movieSection" aria-labelledby="movieTitle">
+          <div class="movie-head">
+            <div>
+              <h2 id="movieTitle">Ямар кино үзэх вэ? 🎬</h2>
+              <p>Үзмээр байгаа бүх киногоо сонгож болно ♡</p>
+            </div>
+            <span class="movie-count">6 кино</span>
+          </div>
+          <div class="movie-scroll" id="movieScroll" role="group" aria-label="Кино сонгох">
+            <label class="movie-card">
+              <span class="movie-poster">
+                <input class="movie-checkbox" type="checkbox" data-movie="Fall 2" aria-label="Fall 2 сонгох">
+                <img src="posters/fall-2.webp" alt="Fall 2: Deadpoint постер" loading="lazy">
+              </span>
+              <span class="movie-title">Fall 2</span>
+            </label>
+            <label class="movie-card">
+              <span class="movie-poster">
+                <input class="movie-checkbox" type="checkbox" data-movie="Clayface" aria-label="Clayface сонгох">
+                <img src="posters/clayface.webp" alt="Clayface постер" loading="lazy">
+              </span>
+              <span class="movie-title">Clayface</span>
+            </label>
+            <label class="movie-card">
+              <span class="movie-poster">
+                <input class="movie-checkbox" type="checkbox" data-movie="Incantation" aria-label="Incantation сонгох">
+                <img src="posters/incantation.webp" alt="Incantation постер" loading="lazy">
+              </span>
+              <span class="movie-title">Incantation</span>
+            </label>
+            <label class="movie-card">
+              <span class="movie-poster">
+                <input class="movie-checkbox" type="checkbox" data-movie="A Moment to Remember" aria-label="A Moment to Remember сонгох">
+                <img src="posters/a-moment-to-remember.webp" alt="A Moment to Remember постер" loading="lazy">
+              </span>
+              <span class="movie-title">A Moment to Remember</span>
+            </label>
+            <label class="movie-card">
+              <span class="movie-poster">
+                <input class="movie-checkbox" type="checkbox" data-movie="Us and Them (2018)" aria-label="Us and Them (2018) сонгох">
+                <img src="posters/us-and-them.webp" alt="Us and Them постер" loading="lazy">
+              </span>
+              <span class="movie-title">Us and Them</span>
+            </label>
+            <label class="movie-card">
+              <span class="movie-poster">
+                <input class="movie-checkbox" type="checkbox" data-movie="Even If This Love Disappears From the World Tonight" aria-label="Even If This Love Disappears From the World Tonight сонгох">
+                <img src="posters/even-if-this-love.webp" alt="Even If This Love Disappears From the World Tonight постер" loading="lazy">
+              </span>
+              <span class="movie-title">Even If This Love…</span>
+            </label>
+          </div>
+          <div id="movieDescription" class="movie-description" aria-live="polite" hidden>
+            <strong id="movieName"></strong>
+            <p id="moviePlot"></p>
+          </div>
+          <label class="checkline no-movie"><input type="checkbox" id="ownMovieCheck"><span>Сонирхолтой кино алга :(</span></label>
+          <div id="ownMovieGroup" class="own-movie-group" hidden>
+            <label for="ownMovie">Тэгвэл ямар кино үзэх үү? ♡</label>
+            <input type="text" id="ownMovie" maxlength="120" placeholder="Киноны нэрийг бичээрэй..." autocomplete="off">
+          </div>
+        </section>
+
+        <section class="field-section time-section" aria-labelledby="timeTitle">
+          <h2 id="timeTitle">Хэдэн цагт?</h2>
+          <div class="chips time-options" id="timeChoices" role="group" aria-label="Цаг сонгох">
+            <button class="chip" type="button" data-time="18:00" aria-pressed="false">18:00</button>
+            <button class="chip" type="button" data-time="18:30" aria-pressed="false">18:30</button>
+            <button class="chip" type="button" data-time="19:00" aria-pressed="false">19:00</button>
+            <button class="chip" type="button" data-time="19:30" aria-pressed="false">19:30</button>
+            <button class="chip selected" type="button" data-time="20:00" aria-pressed="true">20:00</button>
+            <button class="chip" type="button" data-time="20:30" aria-pressed="false">20:30</button>
+            <button class="chip" type="button" data-time="21:00" aria-pressed="false">21:00</button>
+            <button class="chip" type="button" data-time="21:30" aria-pressed="false">21:30</button>
+            <button class="chip" type="button" data-time="22:00" aria-pressed="false">22:00</button>
+            <button class="chip later-time" type="button" data-time="unknown" aria-pressed="false">Одоохондоо хэлж мэдэхгүй байна</button>
+          </div>
+          <p class="time-hint" id="timeHint">Японд 21:00 болно</p>
+        </section>
+
+        <details class="note">
+          <summary>Надад юм хэлмээр байна уу? <span>＋</span></summary>
+          <textarea id="note" rows="3" maxlength="350" placeholder="Энд бичээрэй... ♡"></textarea>
+        </details>
+
+        <p id="error" class="error" aria-live="polite" role="alert"></p>
+        <button class="send" type="submit" id="sendButton"><span id="sendLabel">Илгээх 💌</span></button>
+      </form>
+      <div id="success" class="success" hidden role="status" aria-live="polite">
+        <span class="success-heart">♥</span>
+        <h2>Илгээгдлээ! 💗</h2>
+        <p>Хариуг чинь хүлээж авлаа. Удахгүй болзъё. ♡</p>
+      </div>
+      <p class="footer">just you & me ♡</p>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
